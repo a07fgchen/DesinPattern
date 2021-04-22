@@ -53,20 +53,20 @@ class CacheMysql
     public function set($key, $value)
     {
         $cacheData = $this->get($key);
-        
+
         $data = [
-            'cache_key'=>$key,
-            'cache_value' =>$value
+            'cache_key' => $key,
+            'cache_value' => $value
         ];
-        if($cacheData !== false ){
-            $sql = 'UPDATE '.$this->table.
-            'SET cache_value = :cache_value
+        if ($cacheData !== false) {
+            $sql = 'UPDATE ' . $this->table .
+                'SET cache_value = :cache_value
             WHERE cache_key = :cache_key';
-            
+
             $query = $this->db->prepare($sql);
             $query->execute($data);
-        }else{
-            $sql = 'INSERT INTO '.$this->table.'(cache_key,cache_value)VALUES(:cache_key,:cache_value)';
+        } else {
+            $sql = 'INSERT INTO ' . $this->table . '(cache_key,cache_value)VALUES(:cache_key,:cache_value)';
             $query = $this->db->prepare($sql);
             $query->execute($data);
         }
