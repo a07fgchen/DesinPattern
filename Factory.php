@@ -9,7 +9,8 @@ $setting['mysql']['dbname'] = 'test';
 $setting['mysql']['charset'] = 'UTF8';
 $setting['mysql']['user'] = 'shieldon';
 $setting['mysql']['pass'] = 'taiwan';
-$setting['mysql']['table'] = 'cache_data';
+$setting['mysql']['table'] = 'cache_da
+ta';
 
 $setting['mysql']['host'] = '127.0.0.1';
 $setting['mysql']['port'] = '6379';
